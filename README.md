@@ -2,12 +2,12 @@
 
 This credit card validator takes a json object, in a separate file, in this form: 
 <pre><code>{
-  "number" : "",
-  "name" : "",
+  "number" : "4916177577306385",
+  "name" : "First Last",
   "expire_month" : "11",
-  "expire_year" : "",
-  "zip" : "",
-  "CCV" : 
+  "expire_year" : "2014",
+  "zip" : "12345",
+  "CCV" : 678
 }</code></pre>
 
 Use RSpec and TDD (write test first, then code. Small pieces at a time) to write tests and a class to describe a `CreditCard`. 
