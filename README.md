@@ -2,7 +2,7 @@
 
 This credit card validator takes a json object, in a separate file, in this form: 
 <pre><code>{
-  "number" : "4916177577306385",
+  "number" : "4916177577306385", 
   "name" : "First Last",
   "expire_month" : "11",
   "expire_year" : "2014",
