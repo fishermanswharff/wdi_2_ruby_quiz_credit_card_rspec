@@ -23,9 +23,9 @@ describe CreditCard do
     expect(@cc.card_type).to eq("MasterCard")
   end
 
-  # it 'has valid expiration date that happens in the future' do
-  #   expect(@cc.cc_expire).to be_truthy
-  # end
+  it 'has valid expiration date that happens in the future' do
+    expect(@cc.cc_expire).to be_truthy
+  end
 
   # it 'has a valid CCV number' do
 
