@@ -10,6 +10,9 @@ This credit card validator takes a json object, in a separate file, in this form
   "CCV" : 678
 }</code></pre>
 
+You call the class with this syntax, passing in the filename as the only argument:
+valid_cc = CreditCard.new('path/to/file.json')
+
 Use RSpec and TDD (write test first, then code. Small pieces at a time) to write tests and a class to describe a `CreditCard`. 
 
 The `CreditCard` class should have the following attributes:
