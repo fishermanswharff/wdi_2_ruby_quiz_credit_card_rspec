@@ -23,7 +23,7 @@ class CreditCard
   end
 
   def cc_check_date
-
+    
   end
 
 end
