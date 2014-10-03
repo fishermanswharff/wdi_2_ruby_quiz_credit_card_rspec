@@ -27,16 +27,16 @@ describe CreditCard do
     expect(@cc.cc_expire).to be_truthy
   end
 
-  # it 'has a valid CCV number' do
+  it 'has a valid CCV number' do
+    expect(@cc.cc_ccv_valid).to be_truthy
+  end
 
-  # end
-
-  # it 'has a valid Name' do
-
-  # end
-
-  # it 'has a valid zip code' do 
-
-  # end
+  it 'has a valid Name' do
+    
+  end
+  
+  it 'has a valid zip code' do 
+    expect(@cc.cc_zip_valid).to be_truthy
+  end
 
 end

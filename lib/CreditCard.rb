@@ -6,7 +6,7 @@ require 'date'
 class CreditCard
     
   attr_accessor :cc_number,:card_type
-  attr_reader :cc, :valid_card, :valid_number, :cc_name, :cc_expire, :cc_zip, :cc_ccv, :cc_number
+  attr_reader :cc, :valid_card, :valid_number, :cc_name, :cc_expire, :cc_zip, :cc_ccv, :cc_ccv_valid, :cc_zip_valid
 
   def initialize(filename)
     @cc = JSON.parse( IO.read(filename) )
@@ -18,6 +18,7 @@ class CreditCard
     @cc_ccv = @cc["CCV"]
     cc_num_check
     cc_check_date
+    ccv_valid?
   end
 
   def cc_num_check
@@ -42,7 +43,18 @@ class CreditCard
     now = DateTime.now
     cc_date_check = now <=> expiry_date
     cc_date_check == -1 ? @cc_expire = true : @cc_expire = false
-    binding.pry
+  end
+
+  def ccv_valid?
+    if @card_type == "American Express" 
+      @cc_ccv.length == 4 ? @cc_ccv_valid = true : @cc_ccv_valid = false
+    else
+      @cc_ccv.length == 3 ? @cc_ccv_valid = true : @cc_ccv_valid = false
+    end
+  end
+
+  def zip_valid? 
+    @cc_zip.length == 5 ? @cc_zip_valid = true : @cc_zip_valid = false
   end
 
 end
