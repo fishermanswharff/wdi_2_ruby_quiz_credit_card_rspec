@@ -2,17 +2,19 @@
 
 This credit card validator takes a json object, in a separate file, in this form: 
 <pre><code>{
-  "number" : "4916177577306385", 
-  "name" : "First Last",
-  "expire_month" : "11",
-  "expire_year" : "2014",
-  "zip" : "12345",
-  "CCV" : 678
+  "number" : "4916177577306385", **Can also be spaced (4916 1775 7730 6385) and dashed (4916-1775-7730-6385)
+  "name" : "First Last", **Single string
+  "expire_month" : "11", **Two digits in a string
+  "expire_year" : "2014", **Four digits in a string matched to a future date
+  "zip" : "12345", **Five digits in a string
+  "CCV" : 678 **3 Digits
 }</code></pre>
 
 You call the class with this syntax, passing in the filename as the only argument:<br/>
 *valid_cc = CreditCard.new('path/to/file.json')*
 
+
+# Assignment Requirements:
 Use RSpec and TDD (write test first, then code. Small pieces at a time) to write tests and a class to describe a `CreditCard`. 
 
 The `CreditCard` class should have the following attributes:
@@ -34,4 +36,4 @@ Do *not* check a real credit card number into version control.
 
 - Use a Luhn algorthm to determine if the credit card number is potentially valid
 - Write a `card_type` method that will return Visa, MasterCard, Discover, American Express or Other
-- Use SimpleCov to determine code coverage %.
+- Use SimpleCov to determine code coverage %. 

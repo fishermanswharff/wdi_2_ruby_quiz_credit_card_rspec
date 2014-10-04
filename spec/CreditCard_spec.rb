@@ -3,6 +3,7 @@ require 'spec_helper'
 require "rubygems"
 require 'json'
 require 'date'
+require 'pry'
 
 require_relative '../lib/CreditCard.rb'
 
@@ -28,15 +29,15 @@ describe CreditCard do
   end
 
   it 'has a valid CCV number' do
-    expect(@cc.cc_ccv_valid).to be_truthy
-  end
-
-  it 'has a valid Name' do
-    
+    expect(@cc.cc_ccv).to eq("234")
   end
   
   it 'has a valid zip code' do 
-    expect(@cc.cc_zip_valid).to be_truthy
+    expect(@cc.cc_zip).to eq("02138")
+  end
+
+  it 'has a valid name' do 
+    expect(@cc.cc_name).to eq("Jason Wharff")
   end
 
 end

@@ -19,6 +19,8 @@ class CreditCard
     cc_num_check
     cc_check_date
     ccv_valid?
+    zip_valid?
+    valid_name?
   end
 
   def cc_num_check
@@ -46,15 +48,15 @@ class CreditCard
   end
 
   def ccv_valid?
-    if @card_type == "American Express" 
-      @cc_ccv.length == 4 ? @cc_ccv_valid = true : @cc_ccv_valid = false
-    else
-      @cc_ccv.length == 3 ? @cc_ccv_valid = true : @cc_ccv_valid = false
-    end
+    @cc_ccv = @cc_ccv.scan(/\d{3}/)[0]
   end
 
   def zip_valid? 
-    @cc_zip.length == 5 ? @cc_zip_valid = true : @cc_zip_valid = false
+    @cc_zip = @cc_zip.scan(/[\d]{5}/)[0]
+  end
+
+  def valid_name?
+    @cc_name = @cc_name.scan(/[A-Za-z]\w+/).join(" ")
   end
 
 end
